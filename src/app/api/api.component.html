@@ -1,0 +1,51 @@
+<button (click)="getApiDetails()">Get Api Details</button>
+<h3>header</h3>
+<div class= "jumbotron"> 
+  <ul>
+    <li>growthPlatform= {{data.responseData[0].growth_platform}}</li>
+    <li>Month= {{data.responseData[0].Month}}</li>
+    <li>Year= {{data.responseData[0].Year}}</li>
+  </ul>
+</div>
+<hr>
+<h3>Array of data</h3> 
+<div class= "jumbotron" *ngFor="let i of data.responseData[0].data">
+    <ul>
+      <li>{{i.Actual}}</li>
+      <li>{{i.Practice}}</li>
+      <!-- <li>{{i.1Q19 Plan}}</li> -->
+      <li>{{i.Dropped}}</li>
+      <!-- <li>{{i.Under Study}}</li> -->
+      <li>{{i.Pass}}</li>
+      <li>{{i.Fail}}</li>
+      <li>{{i.Reskilled}}</li>
+      <li>{{i.Assigned}}</li>
+      <li>{{i.Separated}}</li>
+      <!-- <li>{{i.Top Talented}}</li> -->
+      <!-- <li>{{i.Self Sufficiently}}</li> -->
+      <!-- <li>{{i.Future Proofing}}</li> -->
+      <!-- <li>{{i.Bench Management}}</li> -->
+    </ul>
+  </div>
+  <hr>
+  <h3>Config</h3>
+  <div class= "jumbotron">
+    <ul>
+      <li>{{data.config.actual}}</li>
+      <li>{{data.config._id}}</li>
+      <li>{{data.config._rev}}</li>
+      <li>{{data.config.Practice}}</li>
+      <!-- <li>{{data.config.1Q19_plan}}</li> -->
+      <li>{{data.config.dropped}}</li>
+      <li>{{data.config.under_study}}</li>
+      <li>{{data.config.pass}}</li>
+      <li>{{data.config.fail}}</li>
+      <li>{{data.config.reskilled}}</li>
+      <li>{{data.config.assigned}}</li>
+      <li>{{data.config.separated}}</li>
+      <!-- <li>{{data.config.top_talented}}</li> -->
+      <!-- <li>{{data.config.self_sufficiency}}</li> -->
+      <!-- <li>{{data.config.future_proofing}}</li> -->
+      <!-- <li>{{data.config.bench_management}}</li> -->
+    </ul>
+  </div>

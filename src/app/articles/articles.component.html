@@ -1,0 +1,36 @@
+<div class="container" >
+  <div class="row" >
+     <div class="col-md-1"></div> 
+    <div *ngFor="let art of arr">
+    <div class="col-sm-4 " data-category="ui">
+        <section class="main">
+        <div class="lib-panel">
+            <div class="row box-shadow">
+                <div class="col-md-4">
+                    <img class="lib-img" src="{{art.srcImage}}">
+                </div>
+                <div class="col-md-5" id="body">
+                    <div class="lib-row lib-header">
+                        {{art.title}}
+                        <div class="lib-header-seperator"></div>
+                    </div>
+                    <a href="#"> <i class="material-icons">
+                      keyboard_arrow_right
+                      </i></a>
+                    <div class="lib-row lib-desc">
+                        {{art.body}}                          
+                          <div class="buttons">
+                            <label>{{art.date}}</label>
+                            <button type="button" class="btn btn-primary">{{art.detailsOne}}</button>
+                            <button  type="button" class="btn btn-primary">{{art.detailsTwo}}</button>
+                          </div>                   
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <hr>
+</div>
+</div>

@@ -1,0 +1,51 @@
+<div class="form">
+<h1>
+  Suggest an article
+</h1>
+<h5>
+  Proof magazine is a community effort. No one person writes or creates awesome stuff. We all play a role people!
+</h5>
+<br>
+<!-- <form>
+    <input type="text" name="usrname" palceholder="Full Name" required>
+    <input type="email" name="usrname" palceholder="Email Address" required>
+    <input type="text" name="usrname" palceholder="What's the subject?" required>
+    <input type="textarea" name="usrname" palceholder="What's the story?" required>
+    <input type="submit">
+</form> -->
+
+<div class="jumbotron">
+  <form [formGroup]="suggestForm" (ngSubmit)="onSubmit(suggestForm.value)">
+      <div class="form-group">
+          <input type="text" formControlName="name" class="form-control" id="exampleInputName"  placeholder="Full Name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required">Name is required</div>
+          </div>
+        </div>
+  <div class="form-group">
+    <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+    </div>
+  </div>
+  <div class="form-group">
+      <input type="text" formControlName="subject" class="form-control" id="exampleInputSubject"  placeholder="What's the subject?" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }">
+      <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
+          <div *ngIf="f.subject.errors.required">Subject is required</div>
+      </div>
+  </div>
+  <div class="form-group">
+      <textarea type="text" formControlName="story" class="form-control" id="exampleInputStory"  placeholder="What's the story?" [ngClass]="{ 'is-invalid': submitted && f.story.errors }">
+          <div *ngIf="submitted && f.story.errors" class="invalid-feedback">
+              <div *ngIf="f.story.errors.required">Story is required</div>
+          </div>
+      </textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+
+<!-- {{result.name}} -->
